@@ -16,17 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgD-UH-KZM">
-                                <rect key="frame" x="121" y="92" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CgD-UH-KZM">
+                                <rect key="frame" x="121.66666666666669" y="109" width="150" height="150"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="015-nk-F8Y"/>
+                                    <constraint firstAttribute="width" constant="150" id="n5y-sT-LST"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CgD-UH-KZM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="GQb-yP-css"/>
+                            <constraint firstItem="CgD-UH-KZM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jOU-nC-TYL"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="animatableView" destination="CgD-UH-KZM" id="Cag-G2-OPt"/>
+                        <outlet property="widthConstraint" destination="n5y-sT-LST" id="J9t-DP-Zl7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

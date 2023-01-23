@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var animatableView: UIView!
+    @IBOutlet var animatableView: UIView!
+    @IBOutlet var widthConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,9 @@ class ViewController: UIViewController {
         // applyScaleTransformation()
         // applyRotationTransformation()
         // applyTranslateTransformation()
-        applyComplexTransform()
+        // applyComplexTransform()
+        animateWidthConstraintChange()
+        
     }
     // Transform: Arayüz elemanları üzerinde scale, rotate translate gibi
     // değişiklikler yapılmasını sağlayan property dir
@@ -99,9 +102,19 @@ class ViewController: UIViewController {
             
             UIView.animate(withDuration: 1) {
                 self.animatableView.transform = .identity
-
             }
         }
-
     }
+    
+    func animateWidthConstraintChange() {
+        self.widthConstraint.constant = 400
+        // Bir önceki durum ile şuan arasında Constraint lerde bir değişim varsa
+        // constraintleri yeniden hesaplar. ( bu işlem anime edilebilir
+        
+        UIView.animate(withDuration: 2) {
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
 }
